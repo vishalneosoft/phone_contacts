@@ -41,7 +41,7 @@ class Contact < ApplicationRecord
     return contacts if search_params.blank? || search_params[:user_number].blank?
     if search_params.present? && search_params[:user_number].present?
       contacts_search = contacts.where("contacts.telephone LIKE ? ", "%#{search_params[:user_number]}%")
-      unless search_params[:user_number].include?('0') && search_params[:user_number].include?('1')
+      unless search_params[:user_number].include?('0') || search_params[:user_number].include?('1')
         letter_array = number_word_combination(search_params[:user_number])
         search_array = letter_array.map {|val| "%#{val}%" }
         name_search = contacts.where("contacts.first_name ILIKE ANY ( array[?] ) OR contacts.last_name ILIKE ANY ( array[?] )", search_array, search_array)

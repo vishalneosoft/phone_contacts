@@ -1,0 +1,57 @@
+
+
+<div class="container">
+  <div class="contacts-all">
+    <%= render 'user_contacts' %>
+  </div>
+  <div class="user_contact">
+    <%= render 'contact_details' %>
+  </div>
+  <div class="button close-contact">Close Contact</i></div>
+  <%= form_tag 'contacts', id: 'contacts-form', method: :get, class: 'search', remote: true do %>
+    <hr>
+    <input id="output" type="text" name="search[user_number]" value="" class="form-control" readonly="readonly">
+    <div class="row">
+      <div class="digit number" id="one">1</div>
+      <div class="digit number" id="two">2
+        <div class="sub">ABC</div>
+      </div>
+      <div class="digit number" id="three">3
+        <div class="sub">DEF</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="digit number" id="four">4
+        <div class="sub">GHI</div>
+      </div>
+      <div class="digit number" id="five">5
+        <div class="sub">JKL</div>
+      </div>
+      <div class="digit number">6
+        <div class="sub">MNO</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="digit number">7
+        <div class="sub">PQRS</div>
+      </div>
+      <div class="digit number">8
+        <div class="sub">TUV</div>
+      </div>
+      <div class="digit number">9
+        <div class="sub">WXYZ</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="dig">*
+      </div>
+      <div class="digit number">0
+      </div>
+      <div class="dig">#
+      </div>
+    </div>
+    <div id="clear" class="button">Clear Number</i></div>
+  <% end %>
+</div>
+
+<div class="modal fade" id="user-contact-modal" role="dialog" style="display: none;overflow-y: auto;"></div>

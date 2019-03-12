@@ -1,0 +1,29 @@
+<% if @contact.present? %>
+  <div class="contact-detail">
+    <hr>
+    <div class="row">
+      <div class="digit contact-name">
+        <div class="sub">Showing Contact Detail</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="digit contact-name">
+        First Name = <%= @contact.first_name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="digit contact-name">
+        Last Name = <%= @contact.last_name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="digit contact-name">
+        Telephone = <%= @contact.telephone %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="digit contact-name">
+      </div>
+    </div>
+  </div>
+<% end %>

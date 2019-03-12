@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="digit contact-name">
+    <div class="sub">Showing <%= @contacts.count %> contacts</div>
+  </div>
+</div>
+<% @contacts.each do |contact| %>
+  <div class="row">
+    <div id="contact-<%= contact.id %>" class="digit contact-name" data-contact-id="<%= contact.id %>"><%= contact.full_name %>
+      <i class="fa fa-angle-right" aria-hidden="true"></i>
+      <div class="sub"><%= contact.telephone %></div>
+    </div>
+  </div>
+<% end %>
